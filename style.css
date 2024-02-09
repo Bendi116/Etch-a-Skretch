@@ -3,9 +3,33 @@
     padding: 0;
     margin: 0;
 }
+.title{
+    color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 48px;
+}
+.btn-div{
+    color: antiquewhite;
+    display: flex;
+    margin-top: 40px ;
+    justify-content: center;
+}
+.btn{
+    width: 200px;
+    height: 120px;
+    font-size: 24px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(13, 184, 184, 0.983);
+}
+
+
+
 #container{
     width: 1200px;
     height: 1200px;
-    margin: 200px auto;
+    margin: 60px auto;
 
 }
