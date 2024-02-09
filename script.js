@@ -1,10 +1,18 @@
 //Consts
 const container = document.querySelector("#container")
 const height = parseInt(window.getComputedStyle(container).height)
+const btn = document.querySelector(".btn")
+btn.addEventListener("click",showPromptMenu)
 
 
 //functions
 function createGrid(square){
+
+    //clear container 
+    container.innerHTML = ""
+
+
+    //const
     const row_width = height
     const row_height = parseInt(height/square)
     const col_height = parseInt(height/square)
@@ -62,6 +70,15 @@ function removeHoverEffect(e){
         e.target.style.backgroundColor = "black"
     },700)
     
+}
+function showPromptMenu(){
+    let input;
+    do{
+    input = parseInt(prompt("Hoy many square do you want?"))
+    console.log(input)}
+    while(isNaN(input) || input > 100)
+    createGrid(input)
+
 }
 
 createGrid(50)
