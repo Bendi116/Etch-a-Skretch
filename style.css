@@ -4,8 +4,8 @@
     margin: 0;
 }
 #container{
-    border: 5px solid black;
-    width: 960px;
-    height: 960px;
-    margin: 100px auto;
+    width: 1200px;
+    height: 1200px;
+    margin: 200px auto;
+
 }
