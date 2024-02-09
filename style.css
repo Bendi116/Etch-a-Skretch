@@ -23,9 +23,31 @@
     border-radius: 10px;
     padding: 10px;
     background-color: rgba(13, 184, 184, 0.983);
+    
+}
+.random{
+    display: flex;
+    font-size: 24px;
+    padding: 10px;
+    color: rgba(13, 184, 184, 0.983);  
+    justify-content: center;
+    gap: 10px;
 }
 
+.random p{
+    align-self: center;
+}
 
+.random-btn{
+    align-self: center;
+    width: 30px;
+    height: 30px;
+    background-color: azure;
+}
+
+.active {
+    background-color: rgba(13, 184, 184, 0.983) ;
+}
 
 #container{
     width: 1200px;
