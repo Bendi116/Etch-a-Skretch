@@ -2,7 +2,14 @@
 const container = document.querySelector("#container")
 const height = parseInt(window.getComputedStyle(container).height)
 const btn = document.querySelector(".btn")
+const randBtn = document.querySelector(".random-btn")
+
+
+
+
+//event listener
 btn.addEventListener("click",showPromptMenu)
+randBtn.addEventListener("click",toogleRandomized)
 
 
 //functions
@@ -61,25 +68,50 @@ function convertToPX(num){
 }
 
 function createHoverEffect(e){
-    e.target.style.backgroundColor = "white"
+
+    if(randBtn.classList.contains("active")){
+        e.target.style.backgroundColor = randomizeColor()
+    }else{
+        e.target.style.backgroundColor = "white"
+    }
+   
     
 }
 
 function removeHoverEffect(e){
-    setTimeout(()=>{
-        e.target.style.backgroundColor = "black"
-    },700)
+        setTimeout(()=>{
+            e.target.style.backgroundColor = "black"
+        },700)
+    
+   
     
 }
 function showPromptMenu(){
     let input;
     do{
-    input = parseInt(prompt("Hoy many square do you want?"))
-    console.log(input)}
+    input = parseInt(prompt("Hoy many square do you want?"))}
     while(isNaN(input) || input > 100)
     createGrid(input)
 
 }
 
+function randomizeColor(){
+    let hue; //0-360
+    let saturation; //0-100%
+    let lightness = "50"; 
+    hue = parseInt(Math.random()*361)
+    saturation = parseInt(Math.random()*101)
+    return `hsl(${hue},${saturation}%,${lightness}%)`
+
+
+}
+
+function toogleRandomized(e){
+    randBtn.classList.toggle("active")
+    
+
+}
+
 createGrid(50)
+randomizeColor()
 
