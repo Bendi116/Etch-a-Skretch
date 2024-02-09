@@ -3,7 +3,7 @@ const container = document.querySelector("#container")
 const height = parseInt(window.getComputedStyle(container).height)
 
 
-
+//functions
 function createGrid(square){
     const row_width = height
     const row_height = parseInt(height/square)
@@ -27,13 +27,15 @@ function createGrid(square){
             //col div basic css property
             col_div.style.height = convertToPX(col_height)
             col_div.style.width = convertToPX(col_height)
-            col_div.style.border = "1px solid darkgrey"
+            col_div.style.border = "1px solid #999999"
+            col_div.style.backgroundColor = "black"
+
+            //add event listener
+            col_div.addEventListener("mouseenter",createHoverEffect)
+            col_div.addEventListener("mouseleave",removeHoverEffect)
 
             //add to row div
             row_div.appendChild(col_div)
-
-
-            
         }
 
 
@@ -48,6 +50,18 @@ function createGrid(square){
 function convertToPX(num){
     return num + "px"
 
+}
+
+function createHoverEffect(e){
+    e.target.style.backgroundColor = "white"
+    
+}
+
+function removeHoverEffect(e){
+    setTimeout(()=>{
+        e.target.style.backgroundColor = "black"
+    },700)
+    
 }
 
 createGrid(50)
