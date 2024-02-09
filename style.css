@@ -25,29 +25,40 @@
     background-color: rgba(13, 184, 184, 0.983);
     
 }
-.random{
+.modes{
     display: flex;
     font-size: 24px;
     padding: 10px;
     color: rgba(13, 184, 184, 0.983);  
     justify-content: center;
     gap: 10px;
+    flex-direction: column;
 }
 
-.random p{
+.modes p{
     align-self: center;
 }
 
-.random-btn{
+.random-btn, .l-btn{
     align-self: center;
     width: 30px;
     height: 30px;
     background-color: azure;
 }
+.modes div{
+    display: flex;
+    gap: 10px;
+}
+
 
 .active {
     background-color: rgba(13, 184, 184, 0.983) ;
 }
+
+.increase{
+    background-color: rgba(13, 184, 184, 0.983) ;
+}
+
 
 #container{
     width: 1200px;
